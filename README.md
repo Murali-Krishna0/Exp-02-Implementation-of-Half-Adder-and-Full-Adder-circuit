@@ -1,4 +1,6 @@
-# Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit
+
+
+# Exp-03-Implementation-of-Half-Adder-and-Full-Adder-circuit
 
 # Implementation-of-Half-Adder-and-Full-Adder-circuit
 ### AIM:
@@ -36,19 +38,42 @@ Switch ON the main switch
 If the output is 1, then the led glows.
 ### 
 Program:
-/*
-Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-Logic symbol & Truthtable
+```
+module half_adder(A,B,C,S);
+input A,B;
+output S,C;
+assign c=A&B;
+assign S=A^B;
+endmodule
+module FullAdder(a,b,carryin,sum,carryout);
+input a,b,carryin;
+output sum,carryout;
+wire x,p,q,r;
+xor(x,b,carryin);
+xor(sum,x,a);
+and(p,a,b);
+and(q,b,carryin);
+and(r,a,carryin);
+or(carryout,p,q,r);
+endmodule
+```
+## Logic symbol & Truthtable
+## HALF ADDER
+![image](https://github.com/Murali-Krishna0/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/149054535/2f3d8c2d-c2c5-4fdc-8257-33941573898c)
+## FULL ADDER
+![image](https://github.com/Murali-Krishna0/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/149054535/f90cf2d8-2e1f-46de-bf57-53f3e71babc4)
+
 RTL realization
+## HALF ADDER
+![image](https://github.com/Murali-Krishna0/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/149054535/94f5f224-3ca6-464b-b6c5-786a3a145113)
+## FULL ADDER
+![image](https://github.com/Murali-Krishna0/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/149054535/46a4b86f-941f-436b-a66d-028690064a8f)
 
-### Output:
-### RTL
 ### TIMING DIAGRAM
-
-
-### TRUTH TABLE 
+## HALF ADDER
+![image](https://github.com/Murali-Krishna0/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/149054535/737a665c-a501-4975-92a6-e9208ef204c8)
+## FULL ADDER
+![image](https://github.com/Murali-Krishna0/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/149054535/aa8a968c-f869-4cf5-9c06-3b5481f7cc5f)
 
 ### Result:
+Thus the given logic functions are implemented and their operations are verified using verilog programming.
